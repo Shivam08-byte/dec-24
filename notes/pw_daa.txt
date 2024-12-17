@@ -1,0 +1,14 @@
+    Design Stratigies : 
+        Divide and Conquer 
+        Greedy 
+        Dynamic Progaramming 
+
+    Divide and Conquer
+        Divide and Conquer (D&C) is an algorithmic technique where a problem is divided into smaller subproblems, each of which is solved recursively, and their solutions are combined to solve the original problem.
+        Steps:
+        Divide: Break the problem into smaller subproblems.
+        Conquer: Solve the subproblems recursively. If small enough, solve directly.
+        Combine: Merge the subproblem solutions to form the final solution.
+
+        **smaller problems are those which can be solved in one or two operations
+        

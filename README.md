@@ -1,1 +1,1 @@
-# dec-24
+# This repository will be there for taking notes and monitoring my daily learning habbits.
