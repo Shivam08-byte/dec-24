@@ -1,5 +1,5 @@
     Design Stratigies : 
-        Divide and Conquer 
+        Divide and Conquer (mostly recursive solution)
         Greedy 
         Dynamic Progaramming 
 
@@ -11,4 +11,68 @@
         Combine: Merge the subproblem solutions to form the final solution.
 
         **smaller problems are those which can be solved in one or two operations
+
+        SUDO CODE (General Framework)
+        Algotithm DAndC(P)
+        {
+            if Small(P) then return S(P);
+            else 
+            {
+                divide P into smaller instancer P1,P2....Pk>=1;
+                Apply DAndC to each of these subproblems;
+                return Combined(DAndC(P1),DAndC(P2),......DAndC(Pk);)
+            }
+        }
+
+        **Recurence relation in D&C 
+        1. Symmetric
+        2. Asymetric 
+                type 1
+                type 2
+
+        Symmetric
+            general formula :- 
+                T(n) = a*T(n/b)+F(n)
+                where a : number of subproblems
+                   (n/b):Size of each subproblems
+                   a>=1
+                   b>1
+                   F(n)->+ve function
+            ***Short cut : These problems can be solved by Masters's Theorem
+
+        Asymetric
+            ***Short cut : These problem can be solved by Recursion 
+    
+        ^Important Note :
+            In D&C
+                Divide part is mandatory 
+                Conquer part is optional 
+
+                Ex. Binary Search 
+        Min-Max problem
+            Find the min and max element of the array simultaneously         
+            Function findMinMax(arr, low, high):
+                if low == high:  // Base case: Single element
+                    return (arr[low], arr[low])
+                
+                if high == low + 1:  // Base case: Two elements
+                    if arr[low] < arr[high]:
+                        return (arr[low], arr[high])
+                    else:
+                        return (arr[high], arr[low])
+
+                // Recursive case: Divide the array
+                mid = (low + high) // 2
+                (min1, max1) = findMinMax(arr, low, mid)   // Min-Max for the left half
+                (min2, max2) = findMinMax(arr, mid + 1, high)  // Min-Max for the right half
+                
+                // Combine the results: Compare min and max from both halves
+                global_min = min(min1, min2)
+                global_max = max(max1, max2)
+
+                return (global_min, global_max)
+
+
         
+                      
+
